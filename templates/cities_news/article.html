@@ -1,0 +1,46 @@
+{% extends 'cities_news/base.html' %}
+
+{% block title %}De Vrije Student - {{ city_name|title }}{% endblock %}
+
+{% block body_block %}
+<section>
+  <div class="container">
+    {% if article.published %}
+    
+    
+        <!-- show article  -->
+        <br>
+        {{ article.title|title }} <br>
+        {{ article.created_date }} <br>
+        {{ article.text }} <br>
+        {{ article.author }} <br>
+        
+         <br>
+        
+    
+    {% else %}
+    
+        {% if user.is_authenticated %}
+            
+            <!-- is a user of this system show article to preview-->
+            preview article
+            <br>
+            {{ article.title|title }} <br>
+            {{ article.created_date }} <br>
+            {{ article.text }} <br>
+            {{ article.author }} <br>
+            
+             <br>
+
+        {% else %}
+
+             <!-- article in not published, slug was discovered what to show? -->
+             not published
+
+        {% endif %}
+
+
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

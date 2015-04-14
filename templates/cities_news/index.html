@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en" class="ned-html">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>de Vrije Student</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'cities_news/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'cities_news/css/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="kaartpage">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+          <img src="{% static 'cities_news/images/logo.png' %}" class="img-responsive ned-logo">
+        </div>
+      </div>
+      <div class="row ned-row">
+        <div class="col-md-12 ned-col">
+          <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+              <div class="ned-text">
+              <p>Selecteer een stad om door te gaan naar de website</p>
+              </div>
+            </div>
+          </div>
+          <div class="background">
+              
+              <div class="dot dot1" onclick="">
+                <div class="kacircle">
+                </div>
+                <a href="/leeuwarden">
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Leeuwarden
+                  </span>
+                </span>
+                </a>
+              </div>
+              
+
+              <div class="dot dot2" onclick="">
+                <div class="kacircle">
+                </div>
+                <a href="amsterdam">
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Amsterdam
+                  </span>
+                </span>
+                </a>
+              </div>
+              
+              <div class="dot dot3" onclick="">
+                <div class="kacircle">
+                </div>
+                <a href="/utrecht">
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Utrecht
+                  </span>
+                </span>
+                </a>
+              </div>
+              
+              <div class="dot dot4" onclick="">
+              <div class="kacircle">
+              <a href="/arnhem">
+              </div>
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Arnhem
+                  </span>
+                </span>
+                </a>
+              </div>
+              
+              
+              <div class="dot dot5" onclick="">
+              <div class="kacircle">
+              </div>
+              <a href="/rotterdam">
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Rotterdam
+                  </span>
+                </span>
+              </a>  
+              </div>
+              
+              
+              <div class="dot dot6" onclick="">
+              <div class="kacircle">
+              </div>
+              <a href="/eindhoven">
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Eindhoven
+                  </span>
+                </span>
+               </a> 
+              </div>
+              
+              
+              <div class="dot dot7" onclick="">
+              <div class="kacircle">
+              </div>
+              <a href="/maastricht">
+                <span class="tooltip tooltip-effect-1">
+                  <!-- <img src="images/circle.png" class="img-responsive circle" /> -->
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Maastricht
+                  </span>
+                </span>
+              </a>
+              </div>
+              
+            <!-- </div> -->
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <script src="js/jquery.bxslider.js"></script>
+    <link rel="stylesheet" href="css/jquery.bxslider.css"/>
+    
+    <script src="js/app.js"></script>
+  </body>
+</html>
