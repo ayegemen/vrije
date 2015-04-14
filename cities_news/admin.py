@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import City, Article, Tag
+from .models import City, Article, Tag, Mensen
 # Register your models here.
 from django.template.defaultfilters import slugify
 
@@ -43,4 +43,5 @@ class CityAdmin(admin.ModelAdmin):
 
 admin.site.register(City, CityAdmin)
 admin.site.register(Tag)
+admin.site.register(Mensen)
 admin.site.register(Article, ArticleAdmin)

@@ -22,9 +22,9 @@
         <ul class="nav-list">
           <li><a href="/{{ city.title | lower }}" id="homenav">Home</a></li>
           <li><a href="/{{ city.title | lower }}/nieuws" id="nieuwsnav">Nieuws</a></li>
-          <li><a href="/standpunten" id="standpuntennav">Standpunten</a></li>
+          <li><a style="pointer-events: none;cursor: default;" href="/standpunten" id="standpuntennav">Standpunten</a></li>
           <li><a href="/{{ city.title | lower }}/mensen" id="mensennav">Mensen</a></li>
-          <li><a href="/contact" id="contactnav">Contact</a></li>
+          <li><a href="/{{ city.title | lower }}/contact" id="contactnav">Contact</a></li>
         </ul>
       </div>
     </nav>

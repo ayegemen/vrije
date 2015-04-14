@@ -59,3 +59,15 @@ class Article(models.Model):
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
 
+class Mensen(models.Model):
+    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    text = models.CharField(max_length=50, blank=True)
+    email = models.EmailField(max_length=50)
+    phone = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='mensen/', default='default/nieuws.png')
+
+    
+    def __unicode__(self):
+        return self.name
+

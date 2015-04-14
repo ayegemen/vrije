@@ -12,114 +12,25 @@
             <div class="col-md-9">
                 <div class="nieuws-top">NIEUWS | <span>DE VRIJE STUDENT {{ city.title | upper}}</span></div>
                 <div class="row haha">
+                    {% for mens in mensen %}
                     <div class="col-md-4">
                         <div class="mensenpage">
                             
                             <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
+                                <img src="{{ mens.image.url }}" class="mensenpage-img" />
                             </div>
                             <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
+                                <h5>{{ mens.name }}</h5>
+                                {{ mens.title}}
+                                <p>{{ mens.text }}</p>
+                                <p>  <span class="mensenpage-email"> {{mens.email}}</span>
                                 <br />
-                                06-12 345 678
+                                {{ mens.phone }}
                                 </p>
                             </div>
                         </div> 
                     </div>
-                    <div class="col-md-4">
-                        <div class="mensenpage">
-                            
-                            <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
-                            </div>
-                            <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
-                                <br />
-                                06-12 345 678
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mensenpage">
-                            
-                            <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
-                            </div>
-                            <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
-                                <br />
-                                06-12 345 678
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mensenpage">
-                            <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
-                            </div>
-                            <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
-                                <br />
-                                06-12 345 678
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mensenpage">
-                            <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
-                            </div>
-                            <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
-                                <br />
-                                06-12 345 678
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mensenpage">
-                            <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
-                            </div>
-                            <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
-                                <br />
-                                06-12 345 678
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="col-md-4">
-                        <div class="mensenpage">
-                            <div class="crop">
-                                <img src="http://lorempixel.com/1280/720" class="mensenpage-img" />
-                            </div>
-                            <div class="mensenpage-text">
-                                <h5>Matthijs van de Burgwal</h5>
-                                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
-                                <p>  <span class="mensenpage-email"> matthijs@dvs.amsterdam.nl</span>
-                                <br />
-                                06-12 345 678
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
                     <div class="col-md-3">
@@ -199,7 +110,8 @@
               <h5>VOLG ONS OP FACEBOOK</h5>
               <br />
               <span>Ut euismod ex quis</span>
-              <img src="{% static 'cities_news/images/facebooksocial.png' %}" class="faceimg" >
+              <img src="{% static 'cities_news/images/facebook.png' %}" class="faceimg" >
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
             </a>
             
@@ -210,7 +122,8 @@
               <h5>VOLG ONS OP TWITTER</h5>
               <br />
               <span>Ut euismod ex quis</span>
-              <img src="{% static 'cities_news/images/twittersocial.png' %}" class="twitterimg">
+              <img src="{% static 'cities_news/images/twitter.png' %}" class="twitterimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
             </a>
             
@@ -221,7 +134,8 @@
               <h5>VOLG ONS OP YOUTUBE</h5>
               <br />
               <span>Ut euismod ex quis</span>
-              <img src="{% static 'cities_news/images/youtubesocial.png' %}" class="youtubeimg">
+              <img src="{% static 'cities_news/images/youtube.png' %}" class="youimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
             </a>
             </div>

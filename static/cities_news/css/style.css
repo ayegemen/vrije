@@ -462,6 +462,11 @@ a.link {
   text-decoration: none;
 }
 
+.socialcol a:hover .arrowimg{
+  text-decoration: none;
+  right: 5px;
+}
+
 .social h5 {
   margin: 0;
   display: inline-block;
@@ -484,9 +489,36 @@ a.link {
 }
 
 .social img {
+  
+}
+
+.faceimg {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 40px;
+  top: 40px;
+}
+
+.youimg {
+  position: absolute;
+  right: 35px;
+  top: 40px;
+}
+
+.twitterimg {
+  position: absolute;
+  right: 35px;
+  top: 43px;
+}
+
+.arrowimg {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  -webkit-transition: right .5s; /* Safari */
+  -moz-transition: right .5s;
+  -o-transition: right .5s;
+  -ms-transition: right .5s;
+  transition: right .5s;
 }
 
 /*.social:last-child {
@@ -826,7 +858,7 @@ footer p {
 /* ---------------------  CONTACTPAGE --------------------- */
 
 .contactpage-map {
-  margin-top: 30px;
+  margin-top: 42px;
 }
 
 .bezoek {

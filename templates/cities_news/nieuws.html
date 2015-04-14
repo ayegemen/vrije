@@ -15,7 +15,7 @@
             <div class="nieuwsartikel">
                 <div class="nieuwsdatum">12-02-2015</div>
                 <div class="nieuwstitel">
-                     At tale dicit congue eam, pri possim delenit ea.
+                     {{ news.title }}
                 </div>
                 <div class="artikelfoto">
                     <img src="{{ news.image.url}}" width="100%" height="100%" class="img-responsive">
@@ -106,7 +106,8 @@
               <h5>VOLG ONS OP FACEBOOK</h5>
               <br />
               <span>Ut euismod ex quis</span>
-              <img src="{% static 'cities_news/images/facebooksocial.png' %}" class="faceimg" >
+              <img src="{% static 'cities_news/images/facebook.png' %}" class="faceimg" >
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
             </a>
             
@@ -117,7 +118,8 @@
               <h5>VOLG ONS OP TWITTER</h5>
               <br />
               <span>Ut euismod ex quis</span>
-              <img src="{% static 'cities_news/images/twittersocial.png' %}" class="twitterimg">
+              <img src="{% static 'cities_news/images/twitter.png' %}" class="twitterimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
             </a>
             
@@ -128,7 +130,8 @@
               <h5>VOLG ONS OP YOUTUBE</h5>
               <br />
               <span>Ut euismod ex quis</span>
-              <img src="{% static 'cities_news/images/youtubesocial.png' %}" class="youtubeimg">
+              <img src="{% static 'cities_news/images/youtube.png' %}" class="youimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
             </a>
             </div>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from .models import Article, City
+from .models import Article, City, Mensen
 # Create your views here.
 
 
@@ -36,16 +36,26 @@ def article(request, city_name, article_slug):
     return render(request, 'cities_news/article.html', context)
 
 
-def contact(request):
-    return render(request, 'cities_news/contact.html', {})
-
-
-def mensen(request, city_name):
+def contact(request, city_name):
     if not city_name.isupper(): 
         city_name = city_name.title()
         
     city = get_object_or_404(City, title=city_name)
     context = {'city': city}
+    return render(request, 'cities_news/contact.html', context)
+
+
+def mensen(request, city_name):
+    if not city_name.isupper(): 
+        city_name = city_name.title()
+
+    try:
+        mensen = Mensen.objects.all()
+    except:
+        raise Http404("contact the webmaster")   
+    
+    city = get_object_or_404(City, title=city_name)
+    context = {'city': city, 'mensen': mensen}
     return render(request, 'cities_news/mensen.html', context)
 
 
