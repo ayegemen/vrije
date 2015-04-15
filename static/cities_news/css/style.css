@@ -542,24 +542,49 @@ a.link {
   padding-top: 30px;
 }
 
-.mensen .crop2 {
-  position: relative;
+/*.bx-wrapper img {
+    margin: 0 auto;
+}*/
+
+/*.mensen ul li {
+  width: 225px;
+  background-color: red;
+}*/
+
+
+
+
+.crop2 {
+  /*position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 150px !important;
+  height: 150px;*/
+  /*display: block;*/
+  position: relative;
+  display: block;
   width: 150px;
   height: 150px;
+  /*margin-bottom: -40px;*/
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  /*top: 30px;*/
+  /*margin-bottom: -10px;*/
+  /*overflow: hidden;*/
   border-radius: 50%;
   
 }
 
 .mensenimg {
-  display: block;
-  position: relative;
   width: 225px;
   height: 150px;
 }
+
 
 .mensen-hidden {
   display: none;
@@ -570,6 +595,7 @@ a.link {
 }
 
 .mensen-text {
+  margin-top: 20px;
   text-align: center;
   display: none;
   height: 108px;
@@ -821,7 +847,7 @@ footer p {
 .mensenpage {
   width: 100%;
   height: 366px;
-  border-top: 1px solid #37AFEF;
+  /*border-top: 1px solid #37AFEF;*/
   padding-top: 30px;
 } 
 

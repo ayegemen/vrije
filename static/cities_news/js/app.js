@@ -17,6 +17,8 @@ $(document).ready(function(){
     $('.boxslider').bxSlider({
         pager: false,
         preloadImages: 'all',
+        // slideHeight: 200,
+        // slideWidth: 200,
         onSliderLoad: function () {
             $('.mensen>.mensen-text').eq(0).addClass('mensen-show')
         },
