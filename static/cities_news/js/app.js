@@ -17,6 +17,15 @@ $(document).ready(function(){
     $('.boxslider').bxSlider({
         pager: false,
         preloadImages: 'all',
+        onSliderLoad: function () {
+            $('.mensen>.mensen-text').eq(0).addClass('mensen-show')
+        },
+        onSlideBefore: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
+            // console.log(currentSlideNumber);
+            $('.mensen-show').removeClass('mensen-show');
+            $('.mensen>.mensen-text').eq(currentSlideHtmlObject).addClass('mensen-show')
+            // $('.mensen>.mensen-text').eq(currentSlideNumber).toggleClass('mensen-hidden');
+        },
         // onSlideAfter:
         // function($slideElement, oldIndex, newIndex)
         // { $(".mensen-text h5").text("haha") },

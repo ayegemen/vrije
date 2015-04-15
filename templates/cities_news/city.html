@@ -168,14 +168,17 @@
           <div class="col-md-3">
             <div class="mensen">
               <ul class="boxslider">
-                <li><img src="http://lorempixel.com/150/150" class="mensenimg" /></li>
-                <li><img src="http://placehold.it/150x150" class="mensenimg" /></li>
-                <li><img src="http://www.lorempixum.com/150/150" class="mensenimg" /></li>
+              {% for mens in mensen %}
+                <li><div class="crop2"><img src="{{ mens.image.url }}" class="mensenimg" /></div></li>
+              {% endfor %}
               </ul>
+
+              {% for mens in mensen %}
               <div class="mensen-text">
-                <h5>Matthijs van de Burgwal</h5>
-                <p>Ut euismod, ex quis dignissim luctus, orci lectus vulputate.</p>
+                <h5>{{ mens.name }}</h5>
+                <p>{{ mens.text }}</p>
               </div>
+              {% endfor %}
               
               <a href="/index.html" class="link">
                 <div class="stripe-hover">

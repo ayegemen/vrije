@@ -18,7 +18,9 @@ def city(request, city_name):
     except:
         raise Http404("contact the webmaster")
     
-    context = {'latest_news': latest_news, 'city': city}
+    mensen = Mensen.objects.order_by('-name')[:6]
+    print "This is a stick-up %i" % len(mensen)
+    context = {'latest_news': latest_news, 'city': city, 'mensen': mensen}
     return render(request, 'cities_news/city.html', context)
 
 
