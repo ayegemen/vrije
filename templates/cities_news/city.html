@@ -107,7 +107,7 @@
               <div class="col-md-4">
                 <div class="nieuws">
                   <!-- <img src="{% static 'cities_news/images/nieuws.png' %}" class="nieuws-foto"> -->
-                  <img src="{{ news.image.url }}" class="nieuws-foto img-responsive">
+                  <img src="/{{ news.image.url }}" class="nieuws-foto img-responsive">
                   <div class="nieuws-text">
                     <p class="date">{{ news.created_date | date:"d-m-Y"}}</p>
                     <p class="title">{{ news.title }}</p>
