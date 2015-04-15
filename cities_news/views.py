@@ -19,7 +19,7 @@ def city(request, city_name):
         raise Http404("contact the webmaster")
     
     mensen = Mensen.objects.order_by('-name')[:6]
-    print "This is a stick-up %i" % len(mensen)
+
     context = {'latest_news': latest_news, 'city': city, 'mensen': mensen}
     return render(request, 'cities_news/city.html', context)
 
@@ -34,7 +34,7 @@ def article(request, city_name, article_slug):
         city = get_object_or_404(City, title=city_name)
         article = get_object_or_404(Article, slug=article_slug, city=city)
     
-    context = {'article': article, 'city_name': city_name }
+    context = {'article': article, 'city': city }
     return render(request, 'cities_news/article.html', context)
 
 

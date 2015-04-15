@@ -107,13 +107,13 @@
               <div class="col-md-4">
                 <div class="nieuws">
                   <!-- <img src="{% static 'cities_news/images/nieuws.png' %}" class="nieuws-foto"> -->
-                  <img src="/{{ news.image.url }}" class="nieuws-foto img-responsive">
+                  <img src="{{ news.image.url }}" class="nieuws-foto img-responsive">
                   <div class="nieuws-text">
                     <p class="date">{{ news.created_date | date:"d-m-Y"}}</p>
                     <p class="title">{{ news.title }}</p>
                     <p class="text">{{ news.text }}</p>
                   </div>
-                  <a href="/{{city.title}}/{{ news.slug }}" class="link">
+                  <a href="/{{city.title | lower }}/{{ news.slug }}" class="link">
                     <div class="stripe-hover">
                       <div class="stripe">Lees meer<span> ></span>
                       </div>
@@ -169,7 +169,11 @@
             <div class="mensen">
               <ul class="boxslider">
               {% for mens in mensen %}
-                <li><div class="crop2"><img src="{{ mens.image.url }}" class="mensenimg" /></div></li>
+                <li>
+                  <div class="crop2">
+                    <img src="{{ mens.image.url }}" class="mensenimg" />
+                  </div>
+                </li>
               {% endfor %}
               </ul>
 
@@ -180,7 +184,7 @@
               </div>
               {% endfor %}
               
-              <a href="/index.html" class="link">
+              <a href="{{ city.title | lower }}/mensen/" class="link">
                 <div class="stripe-hover">
                 <div class="stripe">Bekijk de lijst<span> ></span>
                 </div></div>
