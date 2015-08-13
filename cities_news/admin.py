@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.template.defaultfilters import slugify
-from .models import City, Article, Tag, Mensen, Standpunten, Punten
+from .models import City, Article, Tag, Member, Position, Point
 
 
 class PointInline(admin.TabularInline)
