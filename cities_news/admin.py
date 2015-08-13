@@ -1,24 +1,25 @@
 from django.contrib import admin
-from .models import City, Article, Tag, Mensen, Standpunten, Punten
-# Register your models here.
 from django.template.defaultfilters import slugify
+from .models import City, Article, Tag, Mensen, Standpunten, Punten
 
-class PuntenInline(admin.TabularInline):
-    model = Punten
+
+class PointInline(admin.TabularInline)
+    model = Point
     extra = 0
     prepopulated_fields = {'slug':('title',),}
-    ordering = ('nummer',)
+    ordering = ('number',)
+
 
 class ArticleAdmin(admin.ModelAdmin):
-    
-    list_display = ("title",
-                    "published",
-                    "author", 
-                    "image",
-                    "created_date", 
-                    "modified",
-                    "preview_article",
+    list_display = ('title',
+                    'published',
+                    'author', 
+                    'image',
+                    'created_date', 
+                    'modified',
+                    'preview_article',
                     )
+
     list_filter = ['author', 'created_date', 'published', 'city', 'tags']
     search_fields = ['title']
     prepopulated_fields = {'slug':('title',),}
@@ -38,30 +39,21 @@ class ArticleAdmin(admin.ModelAdmin):
     
     def preview_article(self, obj):
         return '<a href="/preview/%s">%s</a>' % (obj.slug, obj.slug)
+    #Article admin needs this for preview article 
     preview_article.allow_tags = True
 
 
 class CityAdmin(admin.ModelAdmin):
     list_display = ('title', 'admin_image',)
 
-#class PuntenAdmin(admin.ModelAdmin):
-#    list_display = ('nummer', 'title',)
-#    prepopulated_fields = {'slug':('title',),}
-#    ordering = ('nummer',)
-#class PuntenInline(admin.TabularInline):
-#    model = Punten
-#    extra = 0
-#    ordering = ('nummer',)
 
-class StandpuntenAdmin(admin.ModelAdmin):
-    list_display = ('kopje', 'nummer')
-    ordering = ('nummer',)
-    inlines = [PuntenInline,]
+class PositionAdmin(admin.ModelAdmin):
+    list_display = ('head', 'number')
+    ordering = ('number',)
+    inlines = [PointInline,]
 
 
 admin.site.register(City, CityAdmin)
-#admin.site.register(Tag)
-admin.site.register(Mensen)
+admin.site.register(Member)
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Standpunten, StandpuntenAdmin)
-#admin.site.register(Punten, PuntenAdmin)
+admin.site.register(Position, PositionAdmin)
