@@ -23,7 +23,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['author', 'created_date', 'published', 'city', 'tags']
     search_fields = ['title']
     prepopulated_fields = {'slug':('title',),}
-    readonly_fields = ('image_tag',)    
+    readonly_fields = ('admin_image_article',)    
 
     def save_model(self, request, obj, form, change):
         if getattr(obj, 'author', None) is None:
@@ -44,11 +44,11 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class CityAdmin(admin.ModelAdmin):
-    list_display = ('title', 'admin_image',)
+    list_display = ('title', 'admin_image_city',)
 
 
 class PositionAdmin(admin.ModelAdmin):
-    list_display = ('head', 'number')
+    list_display = ('header', 'number')
     ordering = ('number',)
     inlines = [PointInline,]
 
