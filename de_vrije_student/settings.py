@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -22,11 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '*k3=5sikpehb!o8@sodm!h44_$8_ya(j2d9o&odgu)t!-=f6g0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['188.226.155.30', '.vrijestudent.nl', '.devrijestudent.nl']
 
 
 # Application definition
@@ -62,9 +61,9 @@ WSGI_APPLICATION = 'de_vrije_student.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'vrijedb',
-        'USER': 'postgres',
-        'PASSWORD': 'egemenay',
+        'NAME': 'test_db',
+        'USER': 'django',
+        'PASSWORD': 'lC6xlKssjN',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -83,23 +82,19 @@ USE_L10N = True
 
 USE_TZ = True
 
-# HEROKU
-DATABASES['default'] =  dj_database_url.config()
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['*']
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

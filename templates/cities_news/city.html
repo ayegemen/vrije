@@ -9,93 +9,93 @@
     <section>
       <div class="container">
         <div class="row top-row">
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-12">
+          {% if city.video %}  
             <div class="push">
-              <img src="{% static 'cities_news/images/push.png' %}" class="push-img"/>
-              <div class="block">
-                <h6>ELEIFEND MATTIS</h6>
+              <iframe id="youplayer" width="555" height="308" src="{{city.video_url}}?enablejsapi=1&theme=light&color=white&modestbranding=1&showinfo=0&rel=0&playsinline=0&controls=2" frameborder="0"  allowfullscreen></iframe>
+            </div>
+          {% else %}
+            <a href="{{city.title}}/{{first_news.slug}}" class="link">
+            <div class="push">
+              
+              	<img src="{{first_news.image.url}}" class="push-img" />
+                <img src="{% static 'cities_news/images/shadow.png' %}" class="shadow-img" />
+              
+              <div class="block clearfix">
+                <h6>{{first_news.created_date|date:"d-m-Y"}}</h6>
                 <p>
-                  In semper porta aliquet nullam sed ipsum
-                  quam commodo viverra?
+                  {{first_news.title}}
                 </p>
               </div>
             </div>
+            </a>
+          {% endif %}
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="stand">
-              <img src="{% static 'cities_news/images/stand.png' %}" class="stand-img" />
+              <div class="inthemid">
+              <p class="intext">{{"Vrij studeren is grenzeloos studeren"|upper}}</p>
+              <p>{{"Het beste rendement voor de student"|upper}}</p>
+              <p>{{"Geen bindend studieadvies, maar persoonlijke begeleiding"|upper}}</p>
+              <p>{{"Omdat studenten échte medezeggenschap verdienen"|upper}}</p>
+              <p>{{"Alle hoorcolleges op YouTube"|upper}}</p>
+              <p>{{"Kennis is niet uit te drukken in geld"|upper}}</p>
+              <p>{{"Colleges kijken. Altijd. Overal"|upper}}</p>
+              <p>{{"Studieadvies. Van bindend naar persoonlijk"|upper}}</p>
+              <p>{{"Werkgroepen: maximaal 25 studenten"|upper}}</p>
+              <p>{{"Voor de student die er voor gaat"|upper}}</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-6">
             <div class="kaart">
-              <img src="{% static 'cities_news/images/kaart.png' %}" class="img-responsive ned" />
               <h6>{{ city.title | upper }}</h6>
+              <img src="{% static 'cities_news/images/kaart.png' %}" />
+              <div class="dotc dotc2" onclick="">
+                <a class="circleclick" href="/amsterdam">
+                <div class="kaccircle">
+                </div>
+                </a>
+                <a href="/amsterdam">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Amsterdam
+                  </span>
+                </span>
+                </a>
+              </div>
               
-              <!-- <a href="/leeuwarden">
-              <span class="tooltip tooltip-effect-1 circle1">
-               
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Leeuwarden
+              <div class="dotc dotc4" onclick="">
+                <a href="/nijmegen" class="circleclick">
+                <div class="kaccircle">
+                </div>
+                </a>
+                <a href="/nijmegen">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Nijmegen
+                  </span>
                 </span>
-              </span>
-              </a> -->
+                </a>
+              </div>
               
-
-              <a href="/amsterdam">
-              <span class="tooltip tooltip-effect-1 circle2">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Amsterdam
-                </span>
-              </span>
+              
+              <div class="dotc dotc5" onclick="">
+              <a href="/rotterdam" class="circleclick">
+              <div class="kaccircle">
+              </div>
               </a>
-
-              <a href="/nijmegen">
-              <span class="tooltip tooltip-effect-1 circle3">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Nijmegen
-                </span>
-              </span>
-              </a>
-
-
-              <!-- <a href="/utrecht">
-              <span class="tooltip tooltip-effect-1 circle4">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Utrecht
-                </span>
-              </span>
-              </a> -->
-
               <a href="/rotterdam">
-              <span class="tooltip tooltip-effect-1 circle5">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Rotterdam
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Rotterdam
+                  </span>
                 </span>
-              </span>
-              </a>
-
-              <!-- <a href="/eindhoven">
-              <span class="tooltip tooltip-effect-1 circle6">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Eindhoven
-                </span>
-              </span>
-              </a> -->
-
-              <!-- <a href="/maastricht">
-              <span class="tooltip tooltip-effect-1 circle7">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Maastricht
-                </span>
-              </span>
-              </a> -->
+              </a>  
+              </div>
             </div>
           </div>
         </div>
@@ -103,35 +103,56 @@
         <div class="row bottom-row clearfix">
           <div class="col-md-6">
             <div class="row clearfix">
-            {% for news in latest_news %}
-              <div class="col-md-4">
-                <div class="nieuws">
-                  <!-- <img src="{% static 'cities_news/images/nieuws.png' %}" class="nieuws-foto"> -->
-                  <img src="{{ news.image.url }}" class="nieuws-foto img-responsive">
-                  <div class="nieuws-text">
-                    <p class="date">{{ news.created_date | date:"d-m-Y"}}</p>
-                    <p class="title">{{ news.title }}</p>
-                    <p class="text">{{ news.text }}</p>
-                  </div>
-                  <a href="/{{city.title | lower }}/{{ news.slug }}" class="link">
-                    <div class="stripe-hover">
-                      <div class="stripe">Lees meer<span> ></span>
-                      </div>
+            {% if city.video %}
+              {% for news in latest_news|slice:":3" %}
+                <div class="col-md-4">
+                  <div class="nieuws">
+                    <!-- <img src="{% static 'cities_news/images/nieuws.png' %}" class="nieuws-foto"> -->
+                    <img src="{{ news.image.url }}" class="nieuws-foto img-responsive">
+                    <div class="nieuws-text">
+                      <p class="date">{{ news.created_date | date:"d-m-Y"}}</p>
+                      <p class="title">{{ news.title }}</p>
+                      <p id="clampjs" class="text">{{ news.text|truncatechars:94 }}</p>
                     </div>
-                  </a>
+                    <a href="{{city.title}}/{{news.slug}}" class="link">
+                      <div class="stripe-hover">
+                        <div class="stripe">Lees meer<span> ></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            {% endfor %}  
-            
+              {% endfor %}
+            {% else %}
+              {% for news in latest_news|slice:"1:" %}
+                <div class="col-md-4">
+                  <div class="nieuws">
+                    <!-- <img src="{% static 'cities_news/images/nieuws.png' %}" class="nieuws-foto"> -->
+                    <img src="{{ news.image.url }}" class="nieuws-foto img-responsive">
+                    <div class="nieuws-text">
+                      <p class="date">{{ news.created_date | date:"d-m-Y"}}</p>
+                      <p class="title">{{ news.title }}</p>
+                      <p id="clampitem" class="text">{{ news.text|truncatechars:94 }}</p>
+                    </div>
+                    <a href="{{city.title}}/{{news.slug}}" class="link">
+                      <div class="stripe-hover">
+                        <div class="stripe">Lees meer<span> ></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
             </div>
           </div>
           
           <div class="col-md-3 socialcol">
-            <a href="">
+            <a href="{{city.facebook}}">
             <div class="social">
               <h5>VOLG ONS OP FACEBOOK</h5>
               <br />
-              <span>Ut euismod ex quis</span>
+              <span>voor meer berichten</span>
               <img src="{% static 'cities_news/images/facebook.png' %}" class="faceimg" >
               <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
               
@@ -141,11 +162,11 @@
             
             <div class="social-line"></div>
             
-            <a href="">
+            <a href="{{city.twitter}}">
             <div class="social">
               <h5>VOLG ONS OP TWITTER</h5>
               <br />
-              <span>Ut euismod ex quis</span>
+              <span>en blijf op de hoogte</span>
               <img src="{% static 'cities_news/images/twitter.png' %}" class="twitterimg">
               <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
@@ -153,11 +174,11 @@
             
             <div class="social-line"></div>
           
-            <a href="">
+            <a href="{{city.youtube}}">
             <div class="social">
               <h5>VOLG ONS OP YOUTUBE</h5>
               <br />
-              <span>Ut euismod ex quis</span>
+              <span>en bekijk alle video's</span>
               <img src="{% static 'cities_news/images/youtube.png' %}" class="youimg">
               <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
@@ -170,9 +191,7 @@
               <ul class="boxslider">
               {% for mens in mensen %}
                 <li>
-                  <div class="crop2">
                     <img src="{{ mens.image.url }}" class="mensenimg" />
-                  </div>
                 </li>
               {% endfor %}
               </ul>
@@ -180,11 +199,15 @@
               {% for mens in mensen %}
               <div class="mensen-text">
                 <h5>{{ mens.name }}</h5>
-                <p>{{ mens.text }}</p>
+                <span class="mensentext-title">{{ mens.title}}</span>
+                <p class="mensentext-p">{{ mens.text }}</p>
+                <p><span class="mensentext-email">{{mens.email}}</span>
+                {{ mens.phone }}
+                </p>
               </div>
               {% endfor %}
               
-              <a href="{{ city.title | lower }}/mensen/" class="link">
+              <a href="/{{city.title}}/mensen" class="link">
                 <div class="stripe-hover">
                 <div class="stripe">Bekijk de lijst<span> ></span>
                 </div></div>

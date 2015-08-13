@@ -1,0 +1,116 @@
+{% extends 'cities_news/base.html' %}
+{% load staticfiles %}
+
+{% block title %}De Vrije Student - {{ city.title |title }}{% endblock %}
+
+{% block highlight %}
+<body class="standpuntenpage {{ city.title | lower }}">
+{% endblock %}
+
+{% block body_block %}
+<section>
+  <div class="container">
+    
+    <div class="row">
+        <div class="col-md-9">
+            <div class="nieuws-top">STANDPUNT | <span>DE VRIJE STUDENT {{ city.title | upper }}</span></div>
+            <div class="nieuwsartikel">
+                <div class="nieuwstitel">
+                    {{punt.nummer}} {{ punt.title }}
+                </div>
+                <div class="nieuwstext">
+                    <p>{{ punt.text| safe | linebreaks }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kaart sidebarkaart">
+              <img src="{% static 'cities_news/images/kaart.png' %}" class="img-responsive ned" />
+              <h6>{{ city.title | upper }}</h6>
+              <div class="dotc dotc2" onclick="">
+                <a class="circleclick" href="/amsterdam">
+                <div class="kaccircle">
+                </div>
+                </a>
+                <a href="/amsterdam">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Amsterdam
+                  </span>
+                </span>
+                </a>
+              </div>
+              
+              <div class="dotc dotc4" onclick="">
+                <a href="/nijmegen" class="circleclick">
+                <div class="kaccircle">
+                </div>
+                </a>
+                <a href="/nijmegen">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Nijmegen
+                  </span>
+                </span>
+                </a>
+              </div>
+              
+              
+              <div class="dotc dotc5" onclick="">
+              <a href="/rotterdam" class="circleclick">
+              <div class="kaccircle">
+              </div>
+              </a>
+              <a href="/rotterdam">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Rotterdam
+                  </span>
+                </span>
+              </a>  
+              </div>
+            </div>
+            <div class="socialcol">
+                <a href="{{city.facebook}}">
+            <div class="social">
+              <h5>VOLG ONS OP FACEBOOK</h5>
+              <br />
+              <span>voor meer berichten</span>
+              <img src="{% static 'cities_news/images/facebook.png' %}" class="faceimg" >
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
+            </div>
+            </a>
+            
+            <div class="social-line"></div>
+            
+            <a href="{{city.twitter}}">
+            <div class="social">
+              <h5>VOLG ONS OP TWITTER</h5>
+              <br />
+              <span>en blijf op de hoogte</span>
+              <img src="{% static 'cities_news/images/twitter.png' %}" class="twitterimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
+            </div>
+            </a>
+            
+            <div class="social-line"></div>
+          
+            <a href="{{city.youtube}}">
+            <div class="social">
+              <h5>VOLG ONS OP YOUTUBE</h5>
+              <br />
+              <span>en bekijk alle video's</span>
+              <img src="{% static 'cities_news/images/youtube.png' %}" class="youimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
+            </div>
+            </a>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+</section>
+{% endblock %}

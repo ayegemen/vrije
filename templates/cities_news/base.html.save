@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>de Vrije Student - {{ city.title }}</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'cities_news/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'cities_news/css/style.css' %}" rel="stylesheet">
+  </head>
+  {% block highlight %}
+  <!-- <body class="home {{ city.title | lower }}"> -->
+  {% endblock %}
+    <nav>
+      <div class="container ">
+        <ul class="nav-logo">
+          <li><a href="#"><img src="{% static 'cities_news/images/logo.png' %}" alt="de Vrije Student" /></a></li>
+        </ul>
+        <ul class="nav-list">
+          <li><a href="/{{ city.title | lower }}" id="homenav">Home</a></li>
+          <li><a href="/{{ city.title | lower }}/nieuws" id="nieuwsnav">Nieuws</a></li>
+          <!-- <li><a style="pointer-events: none;cursor: default;" href="/standpunten" id="standpuntennav">Standpunten</a></li> -->
+          <li><a href="/{{ city.title | lower }}/mensen" id="mensennav">Mensen</a></li>
+          <li><a href="/{{ city.title | lower }}/contact" id="contactnav">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    </section>
+      {% block body_block %}
+      {% endblock %}
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="{% static 'cities_news/images/meneer.png' %}">
+            <p>&copy; DE VRIJE STUDENT 2015 | SITEMAP | JOUW PRIVACY</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <script src="{% static 'cities_news/js/jquery.bxslider.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'cities_news/css/jquery.bxslider.css' %}"/>
+    <script src="{% static 'cities_news/js/clamp.js' %}"></script>
+    <script src="{% static 'cities_news/js/app.js' %}"></script>
+    
+  </body>
+</html>
+

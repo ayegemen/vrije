@@ -1,9 +1,125 @@
 {% extends 'cities_news/base.html' %}
+{% load staticfiles %}
+
+{% block highlight %}
+<body class="standpuntenpage {{ city.title | lower }}">
+{% endblock %}
 
 {% block body_block %}
 <section>
   <div class="container">
-    <h2>Standpunten</h2>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="nieuws-top">STANDPUNTEN | <span>DE VRIJE STUDENT {{ city.title | upper }}</span></div>
+            <div class="row standrow">
+                {% for standpunt in standpunten %}
+                <div class="col-md-4 standcol">
+                    <div class="spvak">
+                        <h1>{{standpunt.nummer}}</h1>
+                        <img src="{% static 'cities_news/images/standpunten.png' %}">
+                        <h5>{{standpunt.kopje|upper}}</h5>
+                        <div class="punten">
+                            {% for punt in standpunt.punten_set.all|dictsort:"nummer" %}
+                            <span>{{punt.nummer}}</span><p><a href="/{{city.title|lower}}/standpunten/{{punt.slug}}">{{punt.title}} </a>></p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="kaart sidebarkaart">
+                <h6>{{ city.title | upper }}</h6>
+                <img src="{% static 'cities_news/images/kaart.png' %}" class="img-responsive ned" />
+              
+              
+                <div class="dotc dotc2" onclick="">
+                    <a class="circleclick" href="/amsterdam">
+                    <div class="kaccircle">
+                    </div>
+                    </a>
+                    <a href="/amsterdam">
+                    <span class="tooltip tooltip-effect-1">
+                      
+                      <span class="tooltip-content clearfix">
+                        <strong>De Vrije Student</strong> Amsterdam
+                      </span>
+                    </span>
+                    </a>
+                </div>
+                  
+                <div class="dotc dotc4" onclick="">
+                    <a href="/nijmegen" class="circleclick">
+                    <div class="kaccircle">
+                    </div>
+                    </a>
+                    <a href="/nijmegen">
+                    <span class="tooltip tooltip-effect-1">
+                      
+                      <span class="tooltip-content clearfix">
+                        <strong>De Vrije Student</strong> Nijmegen
+                      </span>
+                    </span>
+                    </a>
+                </div>
+                  
+                  
+                <div class="dotc dotc5" onclick="">
+                  <a href="/rotterdam" class="circleclick">
+                  <div class="kaccircle">
+                  </div>
+                  </a>
+                  <a href="/rotterdam">
+                    <span class="tooltip tooltip-effect-1">
+                      
+                      <span class="tooltip-content clearfix">
+                        <strong>De Vrije Student</strong> Rotterdam
+                      </span>
+                    </span>
+                  </a>  
+                </div>
+              
+            </div> 
+            <div class="socialcol">
+                <a href="">
+            <div class="social">
+              <h5>VOLG ONS OP FACEBOOK</h5>
+              <br />
+              <span>Ut euismod ex quis</span>
+              <img src="{% static 'cities_news/images/facebook.png' %}" class="faceimg" >
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
+            </div>
+            </a>
+            
+            <div class="social-line"></div>
+            
+            <a href="">
+            <div class="social">
+              <h5>VOLG ONS OP TWITTER</h5>
+              <br />
+              <span>Ut euismod ex quis</span>
+              <img src="{% static 'cities_news/images/twitter.png' %}" class="twitterimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
+            </div>
+            </a>
+            
+            <div class="social-line"></div>
+          
+            <a href="">
+            <div class="social">
+              <h5>VOLG ONS OP YOUTUBE</h5>
+              <br />
+              <span>Ut euismod ex quis</span>
+              <img src="{% static 'cities_news/images/youtube.png' %}" class="youimg">
+              <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
+            </div>
+            </a>
+            </div>
+        </div>
+    </div>
   </div>
 </section>
 {% endblock %}

@@ -1,19 +1,26 @@
 // -------------- Nav menu highlight current page --------------------
 $(document).ready(function(){
-    // $(function(){
-    //     // this will get the full URL at the address bar
-    //     var url = window.location.href; 
-    //     // console.log(String(url));
-    //     // passes on every "a" tag 
-    //     $(".nav-list a").each(function() {
-    //         // console.log(String(this))
-    //             // checks if its the same on the address bar
-    //         if($(this).prop('href') == url) { 
-    //             $(this).addClass("active");
-    //         }
-    //     });
-    // });
 
+    function InOut( elem ){
+        elem.delay(2000)
+        .fadeIn(2000)
+        .delay(2000)
+        .fadeOut( 2000,
+            function(){ 
+                if(elem.next().length > 0)
+                {InOut( elem.next() );}
+                else
+                {InOut( elem.siblings(':first'));}
+                         
+            }
+        );
+    }
+    
+    $(function(){
+    $('.inthemid p').hide();
+    InOut( $('.intext:first') );
+    });
+});
     $('.boxslider').bxSlider({
         pager: false,
         preloadImages: 'all',
@@ -33,4 +40,3 @@ $(document).ready(function(){
         // function($slideElement, oldIndex, newIndex)
         // { $(".mensen-text h5").text("haha") },
     });
-});

@@ -12,6 +12,10 @@ class City(models.Model):
     picture = models.FileField(upload_to='city/', default='default/nieuws.png')
     video = models.BooleanField(default=False)
     video_url = models.URLField(blank=True, null=True)
+    twitter = models.CharField(max_length=250, blank=True)
+    facebook = models.CharField(max_length=250, blank=True)
+    youtube = models.CharField(max_length=250, blank=True)
+    bezoek_adres = models.TextField(blank=True)
     
     def __unicode__(self):
         return self.title 
@@ -37,12 +41,12 @@ class Tag(models.Model):
 class Article(models.Model):
     
     city = models.ManyToManyField(City)
-    title = models.CharField(max_length=50, unique=True)
+    title = models.CharField(max_length=150, unique=True)
     tags = models.ManyToManyField(Tag)
     image = models.ImageField(upload_to='article/%Y', default='default/nieuws.png')
     text = models.TextField()
-    slug = models.SlugField(max_length=50, unique=True)
-    author = models.ForeignKey(User, editable = False)
+    slug = models.SlugField(max_length=150, unique=True)
+    author = models.ForeignKey(User, editable=False)
     published = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True, auto_now=False)
     modified = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -60,14 +64,33 @@ class Article(models.Model):
     image_tag.allow_tags = True
 
 class Mensen(models.Model):
+    city = models.ManyToManyField(City)
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=50, blank=True)
     text = models.TextField(blank=True)
     email = models.EmailField(max_length=50, blank=True)
     phone = models.CharField(max_length=20, blank=True)
     image = models.ImageField(upload_to='mensen/', default='default/nieuws.png')
+    published = models.BooleanField(default=False)
 
-    
     def __unicode__(self):
         return self.name
 
+class Standpunten(models.Model):
+    city = models.ManyToManyField(City)
+    kopje = models.CharField(max_length=100)
+    nummer = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.kopje
+
+
+class Punten(models.Model):
+    standpunt = models.ForeignKey(Standpunten)
+    nummer = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    slug = models.SlugField(max_length=100, unique=True)
+
+    def __unicode__(self):
+        return self.title

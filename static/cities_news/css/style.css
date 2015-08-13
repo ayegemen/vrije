@@ -52,7 +52,6 @@ nav {
   margin: 35px 0;
   float: left;
   padding: 0;
-
 }
 
 .nav-logo img {
@@ -108,14 +107,34 @@ section {
   position: relative;
   width: 100%;
   height: auto;
-  /*width: 100%;
-  height: auto;*/
+  overflow: hidden;
+  max-height: 308px;
+}
+
+.crop3 {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .push-img {
+  position: relative;
   width: 100%;
-  /*height: auto;*/
+  height: auto;
+  
 }
+.shadow-img {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 100%;
+  height: auto;
+}
+
+/*#youplayer{
+  width: 100%;
+  height: auto;
+}*/
 
 /*.push img {
   width: 100%
@@ -123,8 +142,9 @@ section {
 
 .block {
   position: absolute;
+  display: block;
   bottom: 20px;
-  width: 80%;
+  width: 79%;
 }
 
 .block h6 {
@@ -150,28 +170,76 @@ section {
 
 /* ------------------- STAND -------------------- */
 
-/*.stand {
-  margin-top: 60px;
+.stand{
+  position: relative;
+  max-width: 260px;
+  height: 308px;
+  text-align: center;
+  background: url("../images/stand.png") no-repeat center;
+}
+
+.stand:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+ /* margin-right: -0.25em;*/
+}
+
+.inthemid {
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+}
+
+.inthemid p {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 110%;
+  line-height: 20px;
+  display:none;
+}
+
+/*.stand ul {
+  position: absolute;
+  height: 150px;
+  width: 180px;
+  display: table;
+  overflow: hidden;
+  top: 77px;
+  left: 40px;
+  padding: 0;
 }*/
 
-.stand, .stand-img {
-  width: 100%;
-  height: auto;
-}
+/*.stand ul li {
+  position: relative;
+  list-style: none;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 110%;
+  line-height: 20px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}*/
+
 
 /* --------------- KAART --------------- */
 
 .kaart {
   position: relative;
   /*border: 1px solid black;*/
-  width: 100%;
+  /*height: 100%;*/
+  height: 308px;
+  max-width: 308px ;
+  padding-top: 40px;
   border-top: 1px solid black;
 }
 
-/*.kaart img.ned {
-  width: 100%;
-  height: auto;
-}*/
+.kaart img {
+  position: relative;
+  margin-left: 20px;
+}
 
 .kaart h6 {
   color: white;
@@ -179,11 +247,49 @@ section {
   display: inline-block;
   background-color: black;
   font-weight: 500;
-  /*margin-left: 15px;*/
   text-align: center;
   padding: 8px 12px;
   margin: 0;
   top: 0px;
+}
+
+.kaccircle {
+  position: absolute;
+  background-color: transparent;
+  border: 1px solid black;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  top: -3px;
+  left: -3px;
+  -webkit-transition: -webkit-transform 0.2s;
+}
+
+.dotc {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+}
+
+
+
+.dotc2 {
+  top: 148px;
+  left: 104px;
+
+}
+
+.dotc4 {
+  top: 198px;
+  left: 160px;
+
+}
+
+.dotc5 {
+  top: 200px;
+  left: 78px;
 
 }
 
@@ -307,28 +413,26 @@ body.maastricht .circle7 .circle {
 .nieuws {
   width: 100%;
   height: auto;
-  overflow: hidden;
   /*font-size: 0.7em;*/
   /*background-color: lightblue;*/
 }
 
 .nieuws-foto {
-  height: 110px;
-  width: 164px;
+  width: 100%;
+  height: auto;
 }
 
 .nieuws-text{
   /*display: block;*/
-  overflow: hidden;
-  height: 193px;
+  height: 170px;
 }
 
 
 .nieuws .date {
   margin: 15px 0 5px 10px;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 0;
-  font-size: 70%;
+  font-size: 12px;
   margin-bottom: 3px;
 }
 
@@ -336,21 +440,44 @@ body.maastricht .circle7 .circle {
   /*line-height: 100%;*/
   margin: 5px 0 5px 10px;
   /*letter-spacing: 1;*/
-  line-height: 120%;
+  height: 51px;
+  line-height: 17px;
   font-weight: 400;
-  font-size: 110%;
+  font-size: 15px;
+  width: 155px;
+  /*word-wrap: break-word;*/
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  overflow: hidden;
 }
 
 .nieuws .text {
-  height: 75px;
+  /*display:-webkit-box;
+  display: flex;
+  flex-direction: column;*/
+  height: 80px;
   /*line-height: 100%;*/
-  padding: 5px 0 0 10px;
+  margin: 5px 0 0 10px;
   /*margin-bottom: 25px;*/
-  line-height: 120%;
+  line-height: 16px;
   /*font-weight: 400;*/
-  font-size: 100%;
+  font-size: 14px;
   font-weight: 300;
+  overflow: hidden;
+  width: 155px;
+  /* Non standard for webkit */
+  word-wrap: break-word;
+  /*word-break: keep-all;*/
+  /*word-break: keep-all;*/
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  /*text-overflow:ellipsis;*/
 }
+
 
 .stripe {
   position: absolute;
@@ -385,7 +512,7 @@ body.maastricht .circle7 .circle {
   position: relative;
   width: 105px;
   height: 29px;
-  margin-top: 20px;
+  margin-top: 15px;
   -webkit-animation: barberpole 2s linear infinite;
   -moz-animation: barberpole 2s linear infinite;
   -o-animation: barberpole 2s linear infinite;
@@ -536,10 +663,10 @@ a.link {
 .mensen {
   position: relative;
   /*border: 1px solid black;*/
-  border-top: 3px solid #00aeef;
+  border-top: 2px solid #00aeef;
   /*width: 100%;
   height: auto;*/
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 /*.bx-wrapper img {
@@ -554,19 +681,24 @@ a.link {
 
 
 
-.crop2 {
+/*.crop2 {
   width: 150px;
   height: 150px;
-  /*position: relative;*/
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto;
-}
+}*/
 
-li img.mensenimg {
-  height: 100%;
+.mensenimg {
+  /*height: 100%;
   width: auto;
-  margin-left: -27%;
+  margin-left: -27%;*/
+  display: block;
+  margin: 0 auto;
+  width: 115px;
+  height: 115px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 /*.bx-wrapper .bx-viewport {
@@ -584,23 +716,57 @@ li img.mensenimg {
 }
 
 .mensen-text {
-  margin-top: 20px;
+  margin-top: 5px;
   text-align: center;
   display: none;
-  height: 100px;
+  height: 105px;
+  overflow: hidden;
 }
 
 .mensen-text h5 {
-  /*font-weight: 700;*/
   font-size: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
-.mensen-text p {
-  margin-top: 15px;
+
+.mensen-text span.mensentext-title {
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 90%;
+  /*margin-bottom: 20px;*/
+}
+
+.mensen-text p.mensentext-p {
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0px;
-  margin-bottom: 20px;
+  line-height: 120%;
+  /*margin-bottom: 20px;*/
+  margin-top: 15px;
+  /*margin-bottom: 5px;*/
 }
+
+.mensen-text span.mensentext-email {
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 30%;
+  /*margin-bottom: 20px;*/
+}
+
+
+/*.mensen-text p {
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  line-height: 100%;
+
+}*/
+
+/*.mensen-text p span {
+  margin-top: 0;
+}*/
 
 
 .mensen .stripe-hover {
@@ -625,20 +791,8 @@ li img.mensenimg {
 
 
 /* ------------- KAARTPAGE ------------------ */
-body.kaartpage {
-  /*height: 100%;*/
-  /*width: auto;*/
-  /*height: 100%;*/
-  /*margin-top: 7%;*/
-  /*padding: 100px auto;*/
-  /*height: 100%;*/
-  /*width: 100%;*/
-  
-}
-.kaartpage .container {
-  /*height: 100%;*/
-  /*margin: 0 auto;*/
-}
+
+
 
 .background {
   position: relative;
@@ -649,21 +803,21 @@ body.kaartpage {
   height: 600px;
   width: 515px;
 
-  
   margin: 0 auto;
 
   background-position: center center;
 }
 
 .ned-logo {
-  padding-top: 10px;
+  padding-top: 35px;
 }
 
 
 
 .ned-text {
   position: absolute;
-  top: 130px;
+  padding-top: 15px;;
+  top: 250px;
   border-top: 1px solid black;
   width: 150px;
 }
@@ -684,7 +838,7 @@ body.kaartpage {
 
 .dot2 {
   top: 240px;
-  left: 185px;
+  left: 190px;
 }
 
 .dot3 {
@@ -693,13 +847,13 @@ body.kaartpage {
 }
 
 .dot4 {
-  top: 320px;
-  left: 330px;
+  top: 345px;
+  left: 320px;
 }
 
 .dot5 {
-  top: 330px;
-  left: 100px;
+  top: 360px;
+  left: 140px;
 }
 
 .dot6 {
@@ -724,9 +878,7 @@ body.kaartpage {
   
 }
 
-.dot:hover .tooltip-content {
-  /*pointer-events: none;*/
-  /*-webkit-transform: scale(1,1);*/
+.dot:hover .tooltip-content, .dotc:hover .tooltip-content {
   visibility: visible;
   opacity: 1;
   -webkit-transform: translate3d(0,0,0) rotate3d(0,0,0,0);
@@ -736,15 +888,15 @@ body.kaartpage {
   transform: translate3d(0,0,0) rotate3d(0,0,0,0);
 }
 
-.dot:hover .kacircle {
+.dot:hover .kacircle, .dotc:hover .kaccircle {
   -webkit-transform: scale(1.2,1.2);
 }
 
-.dot a:hover {
+.dot a:hover, .dotc a:hover {
   text-decoration: none;
 }
 
-.dot a {
+.dot a, .dotc a {
   color: black;
 }
 
@@ -753,7 +905,8 @@ body.kaartpage {
 footer {
   /*position: relative;*/
   background-color: #535353;
-  height: 400px;
+  height: 300px;
+  top: 15px;
 }
 
 /*.haha {
@@ -763,13 +916,13 @@ footer {
 
 footer img {
   position: absolute;
-  top: 360px;
+  top: 260px;
   right: 0px;
 }
 
 footer p {
   position: absolute;
-  top: 365px;
+  top: 265px;
   color: #717171;
   font-size: 85%;
 }
@@ -779,7 +932,7 @@ footer p {
     font-size: 40px;
   }
 }
-
+*/
 
 /* -------------------- NIEUWSPAGE ------------------- */
 .nieuws-top {
@@ -817,8 +970,6 @@ footer p {
 }
 
 .artikelfoto {
-  width: 100%;
-  height: auto;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -837,23 +988,24 @@ footer p {
 .mensenpage {
   width: 100%;
   height: 366px;
-  border-top: 1px solid #37AFEF;
+  border-bottom: 1px solid #37AFEF;
   padding-top: 30px;
 } 
 
-.haha .col-md-4:nth-of-type(-n+3)  .mensenpage {
+/*.haha .col-md-4:nth-of-type(-n+3)  .mensenpage {
   border-top: none;
 
-}
+}*/
 
 .mensenpage-img {
   /*padding-top: 40px;*/
-  width: 225px;
+  width: 150px;
   height: 150px;
   display: block;
-  margin-left: -25%;
-  
-  
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .mensenpage-text {
@@ -873,7 +1025,7 @@ footer p {
   /*margin-bottom: 20px;*/
 }
 
-.mensenpage-text p {
+.mensenpage-text p.mensenpage-p {
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0px;
@@ -889,8 +1041,7 @@ footer p {
   /*margin-bottom: 20px;*/
 }
 
-.crop {
-  /*position: relative;*/
+./*crop {
   display: block;
   width: 150px;
   height: 150px;
@@ -899,15 +1050,21 @@ footer p {
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 50%;
-}
+}*/
 
 /* ---------------------  CONTACTPAGE --------------------- */
 
 .contactpage-map {
-  display: relative;
-  margin-top: 42px;
+  /*display: relative;
+  margin-top: 90px;
   width: 100%;
   overflow: hidden;
+  position: relative;
+  top:90px;*/
+}
+
+.contactpage-top{
+  margin-bottom: 30px;
 }
 
 .bezoek {
@@ -920,4 +1077,96 @@ footer p {
 .bezoek p {
   font-size: 100%;
   font-weight: 300;
+}
+
+
+/* --------------------- STANDPUNTENPAGE ----------------------- */
+
+.spvak {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+  background-color: white;
+}
+.spvak:hover, .spvak:hover p, .spvak:hover h5,.spvak:hover a{
+  background-color: #37AFEF;
+  color: white;
+}
+
+.standrow .col-md-4:nth-last-child(-n+3) .spvak{
+ margin-bottom: 15px; 
+}
+
+.spvak h1 {
+  text-align: center;
+  margin-bottom: -20px;
+  padding-top: 40px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.spvak img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.spvak h5 {
+  position: relative; 
+  /*margin-top: 50px;*/
+  font-weight: 700;
+  /*margin-left: 30px;*/
+  width: 80%;
+  margin: 0 auto;
+  display:block;
+}
+
+.spvak span {
+  margin: 0;
+  display:inline-block;
+  margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+ 
+}
+
+.punten p {
+  white-space: normal;
+  margin: 0;
+  display: inline-block;
+  font-size: 90%;
+  width: 72%;
+}
+
+.punten p a {
+  color:black;
+}
+
+.punten {
+  margin-top: 50px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+@media (min-width: 2000px) and (max-width: 2560px) {
+  .background{
+    height: 1000px;
+    width: 875px;
+  }
+  .dot2 {
+    top: 410px;
+    left: 335px;
+  }
+  .dot4 {
+    top: 590px;
+    left: 540px;
+  }
+  .dot5 {
+    top: 600px;
+    left: 200px;
+  }
 }

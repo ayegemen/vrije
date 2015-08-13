@@ -1,9 +1,13 @@
 from django.contrib import admin
-from .models import City, Article, Tag, Mensen
+from .models import City, Article, Tag, Mensen, Standpunten, Punten
 # Register your models here.
 from django.template.defaultfilters import slugify
 
-
+class PuntenInline(admin.TabularInline):
+    model = Punten
+    extra = 0
+    prepopulated_fields = {'slug':('title',),}
+    ordering = ('nummer',)
 
 class ArticleAdmin(admin.ModelAdmin):
     
@@ -18,8 +22,8 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['author', 'created_date', 'published', 'city', 'tags']
     search_fields = ['title']
     prepopulated_fields = {'slug':('title',),}
-    readonly_fields = ('image_tag',)
-    
+    readonly_fields = ('image_tag',)    
+
     def save_model(self, request, obj, form, change):
         if getattr(obj, 'author', None) is None:
             obj.author = request.user
@@ -40,8 +44,24 @@ class ArticleAdmin(admin.ModelAdmin):
 class CityAdmin(admin.ModelAdmin):
     list_display = ('title', 'admin_image',)
 
+#class PuntenAdmin(admin.ModelAdmin):
+#    list_display = ('nummer', 'title',)
+#    prepopulated_fields = {'slug':('title',),}
+#    ordering = ('nummer',)
+#class PuntenInline(admin.TabularInline):
+#    model = Punten
+#    extra = 0
+#    ordering = ('nummer',)
+
+class StandpuntenAdmin(admin.ModelAdmin):
+    list_display = ('kopje', 'nummer')
+    ordering = ('nummer',)
+    inlines = [PuntenInline,]
+
 
 admin.site.register(City, CityAdmin)
-admin.site.register(Tag)
+#admin.site.register(Tag)
 admin.site.register(Mensen)
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Standpunten, StandpuntenAdmin)
+#admin.site.register(Punten, PuntenAdmin)

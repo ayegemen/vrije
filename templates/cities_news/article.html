@@ -21,10 +21,10 @@
                      {{ article.title }}
                 </div>
                 <div class="artikelfoto">
-                    <img src="{{ article.image.url }}" width="100%" height="100%" class="img-responsive">
+                    <img src="{{ article.image.url }}" width="70%" height="auto" class="img-responsive">
                 </div>
                 <div class="nieuwstext">
-                    <p>{{ article.text | linebreaks }}</p>
+                    <p>{{ article.text| safe | linebreaks }}</p>
                 </div>
                 <div class="delen">
                     <img src="{% static 'cities_news/images/delen.png' %}">
@@ -35,79 +35,58 @@
             <div class="kaart sidebarkaart">
               <img src="{% static 'cities_news/images/kaart.png' %}" class="img-responsive ned" />
               <h6>{{ city.title | upper }}</h6>
+              <div class="dotc dotc2" onclick="">
+                <a class="circleclick" href="/amsterdam">
+                <div class="kaccircle">
+                </div>
+                </a>
+                <a href="/amsterdam">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Amsterdam
+                  </span>
+                </span>
+                </a>
+              </div>
               
-              <!-- <a href="/leeuwarden">
-              <span class="tooltip tooltip-effect-1 circle1">
-               
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Leeuwarden
+              <div class="dotc dotc4" onclick="">
+                <a href="/nijmegen" class="circleclick">
+                <div class="kaccircle">
+                </div>
+                </a>
+                <a href="/nijmegen">
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Nijmegen
+                  </span>
                 </span>
-              </span>
-              </a> -->
+                </a>
+              </div>
               
-
-              <a href="/amsterdam">
-              <span class="tooltip tooltip-effect-1 circle2">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Amsterdam
-                </span>
-              </span>
+              
+              <div class="dotc dotc5" onclick="">
+              <a href="/rotterdam" class="circleclick">
+              <div class="kaccircle">
+              </div>
               </a>
-
-              <a href="/nijmegen">
-              <span class="tooltip tooltip-effect-1 circle3">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Nijmegen
-                </span>
-              </span>
-              </a>
-
-
-              <!-- <a href="/utrecht">
-              <span class="tooltip tooltip-effect-1 circle4">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Utrecht
-                </span>
-              </span>
-              </a> -->
-
               <a href="/rotterdam">
-              <span class="tooltip tooltip-effect-1 circle5">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Rotterdam
+                <span class="tooltip tooltip-effect-1">
+                  
+                  <span class="tooltip-content clearfix">
+                    <strong>De Vrije Student</strong> Rotterdam
+                  </span>
                 </span>
-              </span>
-              </a>
-
-             <!--  <a href="/eindhoven">
-              <span class="tooltip tooltip-effect-1 circle6">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Eindhoven
-                </span>
-              </span>
-              </a> -->
-
-              <!-- <a href="/maastricht">
-              <span class="tooltip tooltip-effect-1 circle7">
-                <img src="{% static 'cities_news/images/circle.png' %}" class="img-responsive circle" />
-                <span class="tooltip-content clearfix">
-                <strong>De Vrije Student</strong> Maastricht
-                </span>
-              </span>
-              </a>
-            </div> -->
+              </a>  
+              </div>
+            </div>
             <div class="socialcol">
-                <a href="">
+                <a href="{{city.facebook}}">
             <div class="social">
               <h5>VOLG ONS OP FACEBOOK</h5>
               <br />
-              <span>Ut euismod ex quis</span>
+              <span>voor meer berichten</span>
               <img src="{% static 'cities_news/images/facebook.png' %}" class="faceimg" >
               <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
@@ -115,11 +94,11 @@
             
             <div class="social-line"></div>
             
-            <a href="">
+            <a href="{{city.twitter}}">
             <div class="social">
               <h5>VOLG ONS OP TWITTER</h5>
               <br />
-              <span>Ut euismod ex quis</span>
+              <span>en blijf op de hoogte</span>
               <img src="{% static 'cities_news/images/twitter.png' %}" class="twitterimg">
               <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
@@ -127,11 +106,11 @@
             
             <div class="social-line"></div>
           
-            <a href="">
+            <a href="{{city.youtube}}">
             <div class="social">
               <h5>VOLG ONS OP YOUTUBE</h5>
               <br />
-              <span>Ut euismod ex quis</span>
+              <span>en bekijk alle video's</span>
               <img src="{% static 'cities_news/images/youtube.png' %}" class="youimg">
               <img src="{% static 'cities_news/images/arrow.png' %}" class="arrowimg" >
             </div>
