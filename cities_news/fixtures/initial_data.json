@@ -1,0 +1,192 @@
+[
+  {
+    "model": "cities_news.city",
+    "pk": 1,
+    "fields": {
+      "title": "Amsterdam"
+    }
+  },
+  {
+    "model": "cities_news.city",
+    "pk": 2,
+    "fields": {
+      "title": "Rotterdam"
+    }
+  },
+  {
+    "model": "cities_news.city",
+    "pk": 3,
+    "fields": {
+      "title": "Nijmegen"
+    }
+  },
+  {
+    "model": "cities_news.tag",
+    "pk": 4,
+    "fields": {
+      "word": "test"
+    }
+  },
+  { 
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "user",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2016-02-07T02:43:37.830Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$JlR1Qmm5YcX8$vr4T3KLbu3h5vSgCPZX8Z4BYZNQk3Shv8Zza3ZCyr0k=",
+        "email": "",
+        "date_joined": "2016-02-07T02:43:37.830Z"
+    }
+  },
+  {
+    "model": "cities_news.article",
+    "pk": 6,
+    "fields": {
+      "city": [1,2,3],
+      "title": "Lorem ipsum dolor sit amet",
+      "tags": [4],
+      "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "slug": "Lorem_ipsum_dolor_sit_amet",
+      "author": 5,
+      "published": "True",
+      "created_date": "2016-01-01 12:00",
+      "modified": "2016-01-01 12:00"
+    }
+  },
+  {
+    "model": "cities_news.article",
+    "pk": 7,
+    "fields": {
+      "city": [1,2,3],
+      "title": "Lorem ipsum dolor sit amet 2",
+      "tags": [4],
+      "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "slug": "Lorem_ipsum_dolor_sit_amet_2",
+      "author": 5,
+      "published": "True",
+      "created_date": "2016-01-01 12:01",
+      "modified": "2016-01-01 12:00"
+    }
+  },
+  {
+    "model": "cities_news.article",
+    "pk": 8,
+    "fields": {
+      "city": [1,2,3],
+      "title": "Lorem ipsum dolor sit amet 3",
+      "tags": [4],
+      "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+      "slug": "Lorem_ipsum_dolor_sit_amet_3",
+      "author": 5,
+      "published": "True",
+      "created_date": "2016-01-01 12:02",
+      "modified": "2016-01-01 12:00"
+    }
+  },
+  {
+    "model": "cities_news.member",
+    "pk": 9,
+    "fields": {
+      "city": [1,2,3],
+      "name": "Lorem Ipsum",
+      "title": "lijsttrekker",
+      "text": "Sed ut perspiciatis unde omnis iste natus error",
+      "email": "test@host.nl",
+      "phone": "06-2233322",
+      "published": "True"
+    }
+  },
+  {
+    "model": "cities_news.member",
+    "pk": 10,
+    "fields": {
+      "city": [1,2,3],
+      "name": "Lorem Ipsum",
+      "title": "plaats 2",
+      "text": "Sed ut perspiciatis unde omnis iste natus error",
+      "email": "test@host.nl",
+      "phone": "06-2233322",
+      "published": "True"
+    }
+  },
+  {
+    "model": "cities_news.position",
+    "pk": 11,
+    "fields": {
+      "city": [1,2,3],
+      "header": "Sed ut perspiciatis unde omnis",
+      "number": "1"
+    }
+  },
+  {
+    "model": "cities_news.position",
+    "pk": 12,
+    "fields": {
+      "city": [1,2,3],
+      "header": "praesentium voluptatum",
+      "number": "2"
+    }
+  },
+  {
+    "model": "cities_news.point",
+    "pk": 13,
+    "fields": {
+      "position": 11,
+      "number": "1",
+      "title": "At vero eos et accusamus",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio",
+      "slug":"at_vero_eos_et_accusamus"
+    }
+  },
+  {
+    "model": "cities_news.point",
+    "pk": 14,
+    "fields": {
+      "position": 11,
+      "number": "2",
+      "title": "At vero eos et accusamus2",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio",
+      "slug":"at_vero_eos_et_accusamus2"
+    }
+  },
+  {
+    "model": "cities_news.point",
+    "pk": 15,
+    "fields": {
+      "position": 11,
+      "number": "3",
+      "title": "At vero eos et accusamus3",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio",
+      "slug":"at_vero_eos_et_accusamus3"
+    }
+  },
+  {
+    "model": "cities_news.point",
+    "pk": 16,
+    "fields": {
+      "position": 12,
+      "number": "1",
+      "title": "At vero eos et accusamus4",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio",
+      "slug":"at_vero_eos_et_accusamus4"
+    }
+  },
+  {
+    "model": "cities_news.point",
+    "pk": 17,
+    "fields": {
+      "position": 12,
+      "number": "2",
+      "title": "At vero eos et accusamus5",
+      "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio",
+      "slug":"at_vero_eos_et_accusamus5"
+    }
+  }
+]

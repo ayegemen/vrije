@@ -28,6 +28,7 @@ class City(models.Model):
     admin_image_city.short_description = 'Image'
     admin_image_city.allow_tags = True
 
+
 class Tag(models.Model):
     word = models.CharField(max_length=50, unique=True)
     
@@ -84,7 +85,7 @@ class Position(models.Model):
 
 
 class Point(models.Model):
-    position    = models.ForeignKey(position)
+    position    = models.ForeignKey(Position)
     number  = models.CharField(max_length=50)
     title   = models.CharField(max_length=100)
     text    = models.TextField()

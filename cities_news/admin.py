@@ -3,7 +3,7 @@ from django.template.defaultfilters import slugify
 from .models import City, Article, Tag, Member, Position, Point
 
 
-class PointInline(admin.TabularInline)
+class PointInline(admin.TabularInline):
     model = Point
     extra = 0
     prepopulated_fields = {'slug':('title',),}

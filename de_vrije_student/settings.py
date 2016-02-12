@@ -21,11 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '*k3=5sikpehb!o8@sodm!h44_$8_ya(j2d9o&odgu)t!-=f6g0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['188.226.155.30', '.vrijestudent.nl', '.devrijestudent.nl']
+#ALLOWED_HOSTS = ['188.226.155.30', '.vrijestudent.nl', '.devrijestudent.nl']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -62,8 +63,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'test_db',
-        'USER': 'django',
-        'PASSWORD': 'lC6xlKssjN',
+        'USER': 'postgres',
+        'PASSWORD': 'egemenay',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -87,14 +88,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-#STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#)
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -15,12 +15,12 @@
                 {% for standpunt in standpunten %}
                 <div class="col-md-4 standcol">
                     <div class="spvak">
-                        <h1>{{standpunt.nummer}}</h1>
+                        <h1>{{standpunt.number}}</h1>
                         <img src="{% static 'cities_news/images/standpunten.png' %}">
-                        <h5>{{standpunt.kopje|upper}}</h5>
+                        <h5>{{standpunt.header|upper}}</h5>
                         <div class="punten">
-                            {% for punt in standpunt.punten_set.all|dictsort:"nummer" %}
-                            <span>{{punt.nummer}}</span><p><a href="/{{city.title|lower}}/standpunten/{{punt.slug}}">{{punt.title}} </a>></p>
+                            {% for punt in standpunt.point_set.all|dictsort:"number" %}
+                            <span>{{punt.number}}</span><p><a href="/{{city.title|lower}}/standpunten/{{punt.slug}}">{{punt.title}} </a>></p>
                             {% endfor %}
                         </div>
                     </div>
