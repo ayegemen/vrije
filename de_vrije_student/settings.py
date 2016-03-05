@@ -62,9 +62,9 @@ WSGI_APPLICATION = 'de_vrije_student.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test_db',
+        'NAME': 'test_vrijedb',
         'USER': 'postgres',
-        'PASSWORD': 'egemenay',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
