@@ -18,8 +18,9 @@ def city(request, city_name):
         latest_news = Article.objects.filter(city=city, published=True).order_by('-created_date')[:4]
     except:
         raise Http404("contact the webmaster")
-    # mens = Member.objects.filter(city=city, published=True).order_by('title')[:1]
-    mensen = Member.objects.filter(city=city, published=True).extra(select={'myinteger': "CAST(substring(title FROM '[0-9]+') AS INTEGER)"}).order_by('-myinteger')[:8]
+    mensen = Member.objects.filter(city=city, published=True).order_by('title')[:8]
+    #this is for postgres
+    #mensen = Member.objects.filter(city=city, published=True).extra(select={'myinteger': "CAST(substring(title FROM '[0-9]+') AS INTEGER)"}).order_by('-myinteger')[:8]
     # mensen = list(chain(mens, mensen))
     try:
         first_news = Article.objects.filter(city=city, published=True).order_by('-created_date')[0]
@@ -62,8 +63,8 @@ def mensen(request, city_name):
    
     city = get_object_or_404(City, title=city_name)
     try:
-        #mens = Member.objects.filter(city=city, published=True).order_by('title')[:1]
-        mensen = Member.objects.filter(city=city, published=True).exclude(title='Lijsttrekker').extra(select={'myinteger': "CAST(substring(title FROM '[0-9]+') AS INTEGER)"}).order_by('-myinteger')
+        mensen = Member.objects.filter(city=city, published=True).order_by('title')
+        #mensen = Member.objects.filter(city=city, published=True).exclude(title='Lijsttrekker').extra(select={'myinteger': "CAST(substring(title FROM '[0-9]+') AS INTEGER)"}).order_by('-myinteger')
         #mensen = list(chain(mens, mensen))  
     except:
         raise Http404("contact the webmaster")   
