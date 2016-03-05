@@ -6,7 +6,7 @@ from itertools import chain
 
 
 def index(request):
-    return render(request, 'cities_news/index.html', {})
+    return render(request, 'cities_news/kaart.html', {})
 
 
 def city(request, city_name):

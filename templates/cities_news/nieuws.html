@@ -13,7 +13,7 @@
             <div class="nieuws-top">NIEUWS | <span>DE VRIJE STUDENT {{ city.title | upper }}</span></div>
             {% for news in latest_news %}
             <div class="nieuwsartikel">
-                <div class="nieuwsdatum">12-02-2015</div>
+                <div class="nieuwsdatum">{{news.created_date|date:"d-m-Y"}}</div>
                 <div class="nieuwstitel">
                      {{ news.title }}
                 </div>
